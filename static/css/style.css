@@ -1,0 +1,1047 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #edf2fc;
+    --secondary-color: #212121;
+    --third-color: #ffffff;
+    --button-color: #47aafa;
+}
+
+.dark-theme {
+    --primary-color: #212121;
+    --secondary-color: #edf2fc;
+    --third-color: #3d3d3d;
+}
+
+#icon {
+    width: 30px;
+    cursor: pointer;
+}
+
+body {
+    background: var(--primary-color);
+}
+
+.header {
+    height: 100vh;
+    width: 100%;
+    font-family: sans-serif;
+    position: relative;
+}
+
+
+/* Custom Scroll Bar CSS */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--button-color);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--button-color);
+}
+
+nav {
+    background: var(--primary-color);
+    width: 100%;
+    margin: auto;
+    padding: 5px 0;
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.logo {
+    color: #ff4321;
+    height: 50px;
+    cursor: pointer;
+    margin-left: 2rem;
+}
+
+#menu li {
+    display: inline-block;
+    list-style: none;
+    align-items: center;
+    margin: 10px 10px;
+    padding: 5px;
+}
+
+#menu li.active {
+    background: white;
+    border-radius: 10px;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+#menu li a:hover {
+    padding-right: 2px;
+    color: #ff4321;
+    text-decoration: underline;
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+
+#menu li a.active {
+    color: #ff4321;
+}
+
+#menu li a i {
+    position: relative;
+    top: -2px;
+    margin-right: 5px;
+}
+
+#btn-mobile {
+    display: none;
+}
+
+#arrow-up {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#arrow-up a {
+    text-decoration: none;
+}
+
+#arrow-up i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--third-color);
+    background-color: var(--button-color);
+    border-radius: 50%;
+}
+
+#arrow-up i:hover {
+    color: var(--button-color);
+    background-color: var(--third-color);
+}
+
+.info {
+    padding-top: 4rem;
+    /* Using rem */
+    margin-left: 8%;
+    color: var(--secondary-color);
+}
+
+.info h1 {
+    font-size: 4rem;
+    /* Using rem */
+    color: var(--secondary-color);
+    margin-top: 4%;
+    /* Using percentage */
+    margin-bottom: 1.5rem;
+    /* Using rem */
+}
+
+span {
+    color: #ff4321;
+}
+
+.info p {
+    color: var(--secondary-color);
+    line-height: 1.5;
+    /* Using unitless value for line-height */
+}
+
+.info .hire {
+    display: inline-block;
+    margin: 2rem 0;
+    /* Using rem */
+    border-radius: 0.5rem;
+    /* Using rem */
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1rem 1.5rem;
+    /* Using rem */
+    background: var(--button-color);
+}
+
+.info .hire a {
+    text-decoration: none;
+    color: white;
+}
+
+.info .hire:hover {
+    background: #ff4321;
+}
+
+.info .hire:active {
+    background: #f32905;
+}
+
+.img-box {
+    width: 45%;
+    /* Using percentage */
+    height: 80vh;
+    /* Using viewport height (vh) */
+    position: absolute;
+    bottom: 0;
+    right: 2%;
+    /* Using percentage */
+}
+
+.img-box img {
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    transition: bottom 1s, left 1s;
+}
+
+.img-box .main-img {
+    height: 110%;
+}
+
+.img-box:hover .back-img {
+    bottom: 5vh;
+    /* Using viewport height (vh) */
+}
+
+.img-box:hover .main-img {
+    left: 54%;
+}
+
+.social {
+    display: flex;
+    margin-left: 8%;
+    margin-top: 1.25rem;
+    /* Using rem */
+    font-family: 'Poppins', sans-serif;
+}
+
+.social h2 {
+    position: relative;
+    font-size: 3rem;
+    /* Using rem */
+    color: var(--primary-color);
+}
+
+.social h2::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: var(--primary-color);
+    -webkit-text-stroke: 0.013rem var(--secondary-color);
+    /* Using rem */
+    border-right: 0.032rem solid var(--primary-color);
+    /* Using rem */
+    overflow: hidden;
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 100%;
+        color: #ff4321;
+        border-right: 0.032rem solid #ff4321;
+        /* Using rem */
+    }
+}
+
+.social-link {
+    margin-left: 8%;
+    margin-top: 1.25rem;
+    /* Using rem */
+}
+
+.social-link a img {
+    width: 1.5625rem;
+    /* Using rem */
+    height: 1.5625rem;
+    /* Using rem */
+    margin-right: 0.625rem;
+    /* Using rem */
+}
+
+.social-link a img:hover {
+    width: 1.625rem;
+    /* Using rem */
+    height: 1.625rem;
+    /* Using rem */
+    margin-right: 0.625rem;
+    /* Using rem */
+}
+
+.social-link a img::after {
+    width: 1.5rem;
+    /* Using rem */
+    height: 1.5rem;
+    /* Using rem */
+    margin-right: 0.625rem;
+    /* Using rem */
+}
+
+
+/* About Section Styling */
+
+
+/* Those Elements Where We Have Apply Same CSS,
+ I'm Selecting Directly 'Section Tag' and 'Class'  */
+
+section {
+    padding-top: 2.5rem;
+    /* Using rem */
+}
+
+section .content {
+    width: 80%;
+    /* Using percentage */
+    margin: 2.5rem auto;
+    /* Using rem */
+    font-family: 'Poppins', sans-serif;
+}
+
+.about .about-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section .title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    /* Using rem */
+}
+
+section .title span {
+    color: var(--secondary-color);
+    font-size: 1.875rem;
+    /* Using rem */
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.5rem;
+    /* Using rem */
+}
+
+section .title span::before,
+section .title span::after {
+    content: '';
+    position: absolute;
+    height: 0.1875rem;
+    /* Using rem */
+    width: 100%;
+    background: var(--button-color);
+    left: 0;
+    bottom: 0;
+}
+
+section .title span::after {
+    bottom: -0.4375rem;
+    /* Using rem */
+    width: 70%;
+    /* Using percentage */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about .about-details .left {
+    width: 45%;
+    /* Using percentage */
+}
+
+.about .left img {
+    height: 18.75rem;
+    /* Using rem */
+    width: 25rem;
+    /* Using rem */
+    object-fit: cover;
+    border-radius: 0.75rem;
+    /* Using rem */
+    box-shadow: 0px 0px 0.625rem white;
+    /* Using rem */
+    transition: all 0.5s;
+}
+
+.about .left img:hover {
+    box-shadow: 0px 0px 0.9375rem rgb(179, 237, 245);
+    /* Using rem */
+    height: 19.375rem;
+    /* Using rem */
+    width: 25.625rem;
+    /* Using rem */
+    transition: all 0.5s;
+}
+
+.about-details .right {
+    width: 55%;
+    /* Using percentage */
+}
+
+section .topic {
+    color: var(--secondary-color);
+    font-size: 1.5625rem;
+    /* Using rem */
+    font-weight: 500;
+    margin-bottom: 1rem;
+    /* Using rem */
+}
+
+.about-details .right p {
+    text-align: justify;
+    color: var(--secondary-color);
+}
+
+section .button {
+    margin: 1rem 0;
+    /* Using rem */
+}
+
+section .button button {
+    outline: none;
+    padding: 0.5rem 1rem;
+    /* Using rem */
+    font-size: 1.5625rem;
+    /* Using rem */
+    font-weight: 400;
+    border-radius: 0.625rem;
+    /* Using rem */
+    background: var(--button-color);
+    color: #fff;
+    border: 0.125rem solid transparent;
+    /* Using rem */
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+section .button button:hover {
+    border-color: var(--button-color);
+    background-color: #fff;
+    color: var(--button-color);
+}
+
+section .button i {
+    padding: 0.625rem;
+    /* Using rem */
+}
+
+
+/* My Skills CSS */
+
+.skills {
+    background: var(--third-color);
+    border-radius: 1.25rem;
+    /* Using rem */
+}
+
+.skills .content {
+    padding: 1.25rem 0;
+    /* Using rem */
+}
+
+.skills .skills-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Changed from 'top' to 'flex-start' */
+}
+
+.skills-details .text {
+    width: 40%;
+    justify-content: left;
+    margin-top: 1.25rem;
+    /* Using rem */
+}
+
+.skills-details p {
+    color: var(--secondary-color);
+    text-align: justify;
+    margin: 0.625rem;
+    /* Using rem */
+}
+
+.skills .skills-details .experience {
+    display: flex;
+    align-items: center;
+    margin: 0 0.625rem;
+    /* Using rem */
+}
+
+.skills-details .experience .num {
+    color: var(--secondary-color);
+    font-size: 5rem;
+    /* Using rem */
+}
+
+.skills-details .experience .exp {
+    color: var(--secondary-color);
+    margin-left: 1.25rem;
+    /* Using rem */
+    font-size: 1.125rem;
+    /* Using rem */
+    font-weight: 500;
+}
+
+.skills-details .boxes {
+    width: 55%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.skills-details .box {
+    width: calc(33.33% - 1.875rem);
+    /* Using rem */
+    margin: 1.25rem 0.625rem;
+    /* Using rem */
+    padding: 0.313rem;
+    /* Using rem */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.skills-details .box:hover {
+    box-shadow: 0px 0.063rem 0.313rem var(--secondary-color);
+    /* Using rem */
+    border-radius: 0.625rem;
+    /* Using rem */
+}
+
+.skills-details .boxes .topic {
+    font-size: 1.25rem;
+    /* Using rem */
+    color: var(--button-color);
+    font-weight: bold;
+}
+
+.skills-details .boxes .flag img {
+    box-shadow: 0px 0px 0.938rem rgb(179, 237, 245);
+    /* Using rem */
+    height: 3.125rem;
+    /* Using rem */
+    width: auto;
+    transition: all 0.5s;
+}
+
+.skills-details .boxes .per {
+    font-size: 2.5rem;
+    /* Using rem */
+    font-weight: bold;
+    color: var(--button-color);
+}
+
+
+/* * My Services CSS */
+
+.services .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.services .boxes .box {
+    margin: 20px 0px;
+    width: calc(100% / 3 - 30px);
+    text-align: center;
+    border-radius: 12px;
+    padding: 30px 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+    cursor: default;
+    transition: all 0.4s ease;
+    color: var(--secondary-color);
+    background: var(--third-color);
+}
+
+.services .boxes .box:hover {
+    background: var(--button-color);
+    color: #fff;
+    box-shadow: 0px 1px 5px var(--secondary-color);
+}
+
+.services .boxes .box .icon {
+    height: 50px;
+    width: 50px;
+    background: var(--button-color);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    color: #fff;
+    margin: 0 auto 10px auto;
+    transition: all 0.4s ease;
+}
+
+.boxes .box:hover .icon {
+    background-color: white;
+    color: var(--button-color);
+}
+
+.services .boxes .box:hover .topic,
+.services .boxes .box:hover p {
+    color: var(--secondary-color);
+    transition: all 0.4s ease;
+}
+
+.services .boxes .box:hover .topic,
+.services .boxes .box:hover p {
+    color: #fff;
+}
+
+
+/* education */
+
+.education {
+    background: var(--third-color);
+}
+
+.education-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Vertically align items */
+}
+
+.faculty {
+    flex: 0 0 auto;
+    /* Shrink-to-fit width */
+    margin-right: 20px;
+    /* Adjust as needed */
+}
+
+.text {
+    flex: 0 0 65%;
+    /* Adjust the width of the text container */
+}
+
+.education .content .education-banner .faculty {
+    width: 30%;
+}
+
+.education .content .education-banner .faculty img {
+    height: 250px;
+    width: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px white;
+    transition: all 0.5s;
+}
+
+.education .content .education-banner .faculty img:hover {
+    box-shadow: 0px 0px 15px rgb(179, 237, 245);
+    height: 260px;
+    width: auto;
+    transition: all 0.5s;
+}
+
+
+/* Work experiences */
+
+.works-details-banner {
+    display: flex;
+    align-items: center;
+    /* Vertically align items */
+    justify-content: space-between;
+    /* Vertically align items */
+}
+
+
+/* .poster {
+    flex: 0 0 auto; 
+    margin-right: 20px; 
+} */
+
+.works .content .works-details-banner {
+    background: var(--third-color);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.text {
+    flex: 1;
+    /* Take remaining space */
+}
+
+.works .content .works-details-banner .text {
+    margin-left: 10%;
+}
+
+.works .content .works-details-banner .poster {
+    width: 35%;
+}
+
+.works .content .works-details-banner .poster img {
+    height: 200px;
+    width: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px white;
+    transition: all 0.5s;
+}
+
+.works .content .works-details-banner .poster img:hover {
+    box-shadow: 0px 0px 15px rgb(179, 237, 245);
+    height: 210px;
+    width: auto;
+    transition: all 0.5s;
+}
+
+
+/* Certificates */
+
+.certificate-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    gap: 5%;
+    padding: 5%;
+}
+
+.certificate-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-item a {
+    display: block;
+    width: 100%;
+    padding-top: 80%;
+    /* 3:2 aspect ratio */
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.certificate-item a img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.certificate-item a:hover img {
+    transform: scale(1.05);
+}
+
+.certificate-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.certificate-item a:hover .overlay {
+    opacity: 1;
+}
+
+.certificate-item h4 {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+/* Contact Me CSS */
+
+.contact {
+    background: var(--third-color);
+    /* width: 90%;
+    margin: auto; */
+    border-radius: 20px;
+}
+
+.contact .content {
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.contact .text {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    color: var(--secondary-color);
+}
+
+.contact .text ul li {
+    display: flex;
+    list-style: none;
+    text-align: left;
+}
+
+.contact .text ul li img {
+    position: relative;
+    top: -1px;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.contact .text ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.contact .text ul li a:hover {
+    text-decoration: underline;
+    color: var(--button-color);
+}
+
+.footer {
+    background: var(--third-color);
+    color: var(--secondary-color);
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    padding: 20px;
+    font-weight: bold;
+}
+
+
+/* Responsive Media Query */
+
+@media (max-width: 1190px) {
+    section .content {
+        width: 85%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .about .about-details {
+        justify-content: center;
+        flex-direction: column;
+    }
+    .about .about-details .left {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .about-details .right {
+        width: 90%;
+        margin: 40px 0;
+    }
+    .services .boxes .box {
+        margin: 20px 0;
+        width: calc(100% / 2 - 20px);
+    }
+}
+
+@media (max-width: 900px) {
+    .about .left img {
+        height: 350px;
+        width: 350px;
+    }
+}
+
+
+/* Responsive for mobile */
+
+@media (max-width: 768px) {
+    #menu {
+        display: none;
+        position: absolute;
+        width: 40%;
+        top: 80px;
+        left: 0px;
+        background-color: rgba(36, 36, 36, 0.925);
+        transition: margin-right 2s ease-in-out;
+        border-radius: 0px 20px 20px 0px;
+        z-index: 1000;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+    nav.active #menu {
+        height: calc(90vh - 60px);
+        display: block;
+        visibility: visible;
+        overflow-y: auto;
+    }
+    #menu li {
+        display: flex;
+    }
+    #menu li.active {
+        background: white;
+        border-radius: 10px 2px 10px 2px;
+    }
+    #menu li a {
+        font-weight: bold;
+        width: 100%;
+        color: white;
+        padding: 1rem 0;
+        margin: 0 0.5rem;
+        border-bottom: 1px solid rgb(255, 255, 255);
+    }
+    #menu li a.active {
+        color: #ff4321;
+    }
+    #menu li a i {
+        margin-right: 1rem;
+    }
+    #btn-mobile {
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+    #hamburger {
+        border-top: 2px solid var(--secondary-color);
+        width: 20px;
+    }
+    #hamburger::after,
+    #hamburger::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: var(--secondary-color);
+        margin-top: 5px;
+        transition: .5s;
+        position: relative;
+    }
+    nav.active #hamburger {
+        border-top-color: transparent;
+        /* background: rgba(255, 29, 29, 0.89); */
+        padding: 0.1rem;
+        border-radius: 5px;
+    }
+    nav.active #hamburger::before {
+        transform: rotate(135deg);
+    }
+    nav.active #hamburger::after {
+        transform: rotate(-135deg);
+        top: -5px;
+    }
+    .img-box img {
+        height: 40%;
+        position: absolute;
+        left: 30%;
+        bottom: 0;
+        transform: translateX(-50%);
+        transition: bottom 1s, left 1s;
+    }
+    .img-box .main-img {
+        height: 50%;
+    }
+    .img-box:hover .back-img {
+        bottom: 40px;
+    }
+    .img-box:hover .main-img {
+        left: 35%;
+    }
+    /* skills */
+    .skills .skills-details {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .skills-details .text {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .skills-details .boxes {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .services .boxes .box {
+        margin: 20px 0;
+        width: 100%;
+    }
+    .contact .text {
+        width: 100%;
+    }
+    /* skill */
+    .skills-details .boxes .per {
+        font-size: 25px;
+        color: var(--button-color);
+    }
+    .works-details-banner {
+        flex-direction: column;
+        /* Stack items vertically */
+    }
+    .poster {
+        margin-right: 0;
+        /* Remove right margin */
+        margin-bottom: 20px;
+        /* Add bottom margin for spacing */
+    }
+    /* education */
+    .education-banner {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .education .content .education-banner .faculty {
+        margin-top: 15px;
+        margin-bottom: 1.25rem;
+        width: 80%;
+    }
+    .text {
+        flex: 0 0 100%;
+        /* Full width for text container */
+    }
+    .education .content .education-banner .faculty img {
+        height: auto;
+        width: 90%;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0px 0px 10px white;
+        transition: all 0.5s;
+    }
+    .education .content .education-banner .faculty img:hover {
+        height: auto;
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: none;
+    }
+    /* work experiences */
+    .works .content .works-details-banner {
+        padding: 1rem;
+        /* Adjust padding for mobile */
+    }
+    .works .content .works-details-banner .poster {
+        width: 90%;
+        /* Adjust width of the image container for smaller screens */
+    }
+    /* contact */
+    .contact .text {
+        width: 80%;
+        /* Adjusted width for mobile */
+    }
+}
