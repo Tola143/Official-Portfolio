@@ -481,6 +481,10 @@ section .button i {
     /* Using rem */
 }
 
+.skills .skills-details .text li{
+    color: var(--secondary-color);
+}
+
 .skills .skills-details .experience {
     display: flex;
     align-items: center;
@@ -630,8 +634,13 @@ section .button i {
 }
 
 .text {
+    color: var(--secondary-color);
     flex: 0 0 65%;
     /* Adjust the width of the text container */
+}
+
+.text a{
+    color: var(--button-color);
 }
 
 .education .content .education-banner .faculty {
@@ -770,6 +779,8 @@ section .button i {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin: 20px;
+    color: var(--secondary-color);
 }
 
 
@@ -1039,6 +1050,13 @@ section .button i {
         width: 90%;
         /* Adjust width of the image container for smaller screens */
     }
+
+    /* certificate */
+    .certificate-item h4{
+        font-size: 12px;
+    }
+
+
     /* contact */
     .contact .text {
         width: 80%;
