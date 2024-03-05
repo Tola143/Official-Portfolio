@@ -478,6 +478,7 @@ section .button i {
     color: var(--secondary-color);
     text-align: justify;
     margin: 0.625rem;
+    padding-right: 1rem;
     /* Using rem */
 }
 
@@ -693,6 +694,7 @@ section .button i {
 
 .works .content .works-details-banner .text {
     margin-left: 10%;
+    padding: 10px;
 }
 
 .works .content .works-details-banner .poster {
@@ -1046,10 +1048,16 @@ section .button i {
         padding: 1rem;
         /* Adjust padding for mobile */
     }
+    .works .content .works-details-banner text p{
+        padding-left: 1rem;
+        
+        /* Adjust padding for mobile */
+    }
     .works .content .works-details-banner .poster {
         width: 90%;
         /* Adjust width of the image container for smaller screens */
     }
+
 
     /* certificate */
     .certificate-item h4{
