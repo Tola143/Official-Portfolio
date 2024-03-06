@@ -723,7 +723,7 @@ section .button i {
 .certificate-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
-    gap: 5%;
+    gap: 2%;
     padding: 5%;
 }
 
@@ -781,7 +781,7 @@ section .button i {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin: 20px;
+    /* margin: 20px; */
     color: var(--secondary-color);
 }
 
